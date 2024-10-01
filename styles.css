@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    width: 320px; /* Tăng kích thước popup */
+    background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
+    border-radius: 8px; /* Bo tròn góc */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    padding: 10px; /* Padding cho popup */
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+#task-container {
+    display: flex; /* Flexbox cho task container */
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+#task-input {
+    padding: 10px; /* Padding cho ô nhập */
+    border: 1px solid #ccc; /* Đường viền nhẹ */
+    border-radius: 4px; /* Bo tròn góc */
+    margin-bottom: 5px; /* Khoảng cách giữa ô nhập và nút */
+}
+
+#task-deadline {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px; /* Khoảng cách giữa ô nhập và nút */
+}
+
+button {
+    background-color: #28a745; /* Màu xanh cho nút */
+    color: white; /* Màu chữ */
+    border: none;
+    padding: 10px; /* Padding cho nút */
+    border-radius: 4px; /* Bo tròn góc */
+    cursor: pointer; /* Con trỏ khi hover */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
+}
+
+button:hover {
+    background-color: #218838; /* Màu xanh đậm hơn khi hover */
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Căn chỉnh các phần tử */
+    margin: 5px 0;
+    transition: all 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+    padding: 10px; /* Padding cho task */
+    background-color: #fff; /* Màu nền trắng cho task */
+    border-radius: 4px; /* Bo tròn góc */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #ccc; /* Màu chữ xám khi hoàn thành */
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5); /* Tăng kích thước checkbox */
+    margin-right: 10px; /* Khoảng cách giữa checkbox và label */
+}
+
+.timer {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.hide {
+    opacity: 0; /* Ẩn dần task */
+    transition: opacity 0.3s ease; /* Hiệu ứng ẩn dần */
+}
+
+.show {
+    opacity: 1; /* Hiển thị task */
+    transition: opacity 0.3s ease; /* Hiệu ứng hiển thị */
+}
