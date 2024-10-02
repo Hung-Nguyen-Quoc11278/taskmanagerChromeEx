@@ -1,14 +1,21 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 10px;
     padding: 0;
-    width: 400px;
+    width: 250px;
+    color: white;
 }
+
 #task-container {
     width: 250px;
     display: flex;
     flex-direction: column;
 }
+
 #tasks {
     margin-bottom: 10px;
 }
@@ -25,10 +32,12 @@ body {
     transform: translateY(-10px); /* Di chuyển lên một chút */
     transition: opacity 1.0s ease, transform 0.3s ease; /* Hiệu ứng chuyển tiếp */
 }
+
 .task.show {
     opacity: 1; /* Hiện task */
     transform: translateY(0); /* Trở về vị trí ban đầu */
 }
+
 .task.hide {
     opacity: 0; /* Ẩn task */
     transform: translateY(-10px); /* Di chuyển lên một chút */
@@ -44,14 +53,6 @@ button {
     padding: 5px 10px;
 }
 
-label.strikethrough {
-    text-decoration: line-through;
-}
-.strikethrough {
-    text-decoration: line-through;
-    color: gray;
-}
-
 button {
     margin-left: 10px;
     background-color: #ff4d4d; 
@@ -65,3 +66,207 @@ button {
 button:hover {
     background-color: #ff1a1a;
 }
+button {
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: #ff4d4d; 
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    padding: 5px 10px; 
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng hover */
+button:hover {
+    background-color: #ff1a1a; /* Thay đổi màu sắc */
+    transform: scale(1.05); /* Phóng to một chút */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Thêm bóng đổ */
+}
+
+/* Hiệu ứng click */
+button:active {
+    transform: scale(0.95); /* Giảm kích thước khi nhấn */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Giảm bóng đổ */
+}
+
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-70%, -50%);
+}
+
+.list-skill {
+    display: flex;
+}
+
+.list-skill button:hover {
+    opacity: 50%;
+}
+
+/* #skill-Q {
+    height: 20px;
+    width: 10px;
+    background-image: url(icons/skills/AatroxQ.png);
+    background-size: cover;
+}
+
+#skill-W {
+    height: 20px;
+    width: 10px;
+    background-image: url(icons/skills/AatroxW.png);
+    background-size: cover;
+}
+
+#skill-E {
+    height: 20px;
+    width: 10px;
+    background-image: url(icons/skills/AatroxE.png);
+    background-size: cover;
+}
+
+#skill-R {
+    height: 20px;
+    width: 10px;
+    background-image: url(icons/skills/AatroxR.png);
+    background-size: cover;
+} */
+
+#overlayImage {
+    display: none; /* Ban đầu ẩn hình ảnh */
+    z-index: 9999;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-70%, -50%);
+}
+
+.strikethrough {
+    text-decoration: line-through; /* Gạch ngang chữ */
+    color: grey; /* Màu chữ sau khi hoàn thành */
+}
+
+.broken-letter {
+    display: inline-block; /* Đảm bảo mỗi chữ cái có thể được xử lý độc lập */
+    opacity: 1; /* Độ mờ ban đầu */
+    transform: translateY(0); /* Vị trí ban đầu */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Thời gian chuyển tiếp cho hiệu ứng */
+}
+
+.broken {
+    animation: break 0.5s forwards; /* Áp dụng hiệu ứng break */
+}
+
+.recover {
+    animation: recover 0.5s forwards; /* Áp dụng hiệu ứng recover */
+}
+
+@keyframes break {
+    0% {
+        opacity: 1; /* Bắt đầu với độ mờ 100% */
+        transform: scale(1); /* Kích thước ban đầu */
+    }
+    50% {
+        opacity: 0.5; /* Giảm độ mờ xuống 50% */
+        transform: scale(1.2); /* Tăng kích thước một chút */
+    }
+    100% {
+        opacity: 0; /* Biến mất hoàn toàn */
+        transform: scale(0.5); /* Giảm kích thước */
+    }
+}
+
+@keyframes recover {
+    0% {
+        opacity: 0; /* Bắt đầu với độ mờ 0% */
+        transform: scale(0.5); /* Kích thước nhỏ */
+    }
+    50% {
+        opacity: 0.5; /* Tăng độ mờ lên 50% */
+        transform: scale(1.2); /* Tăng kích thước một chút */
+    }
+    100% {
+        opacity: 1; /* Trở lại với độ mờ 100% */
+        transform: scale(1); /* Kích thước ban đầu */
+    }
+}
+
+/* Định dạng cho checkbox */
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    appearance: none; /* Loại bỏ kiểu mặc định */
+    background-color: black; /* Màu nền checkbox */
+    border: 2px solid red; /* Đường viền đỏ */
+    border-radius: 4px; /* Làm tròn góc */
+    position: relative; /* Để có thể sử dụng cho phần checkmark */
+    cursor: pointer; /* Hiển thị con trỏ như là một nút */
+}
+
+.custom-checkbox:checked {
+    background-color: red; /* Màu nền khi được chọn */
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    width: 6px;
+    height: 10px;
+    border: solid white; /* Màu checkmark */
+    border-width: 0 2px 2px 0; /* Tạo hình chữ V */
+    transform: rotate(45deg); /* Quay để tạo hình chữ V */
+}
+.delStyleButton{
+    background-color: inherit; /* Hoặc bất kỳ giá trị nào bạn muốn */
+    color: inherit; /* Để giữ nguyên màu chữ mặc định */
+    padding: inherit; /* Để giữ nguyên padding mặc định */
+    border: inherit;
+}
+#skill-Q, #skill-W, #skill-E, #skill-R {
+    position: relative;
+    height: 20px;
+    width: 10px;
+    background-size: cover;
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu mượt mà */
+}
+
+#skill-Q {
+    background-image: url('icons/skills/AatroxQ.png'); /* Thay đường dẫn đến hình ảnh */
+}
+
+#skill-W {
+    background-image: url('icons/skills/AatroxW.png');
+}
+
+#skill-E {
+    background-image: url('icons/skills/AatroxE.png');
+}
+
+#skill-R {
+    background-image: url('icons/skills/AatroxR.png');
+}
+
+button.active {
+    background-color: rgba(0, 0, 0, 0.5); /* Màu tối hơn khi hồi chiêu */
+    cursor: not-allowed; /* Đổi con trỏ khi không thể nhấn */
+}
+
+/* Ẩn con trỏ hover */
+button:not(.active):hover {
+    opacity: 0.8; /* Hiệu ứng giảm độ sáng khi hover */
+}
+

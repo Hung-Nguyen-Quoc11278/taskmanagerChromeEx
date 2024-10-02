@@ -1,6 +1,6 @@
 {
     "manifest_version":3,
-    "name":"Task Manager Extension",
+    "name":"AAtrox Kill Your Task",
     "version":"1.0",
     "description":"Manager work myself",
     "action":{
@@ -8,6 +8,10 @@
     },
     "permissions":["storage"],
     "icons":{
-        "48":"./icons/elsuMafia.png"
-    }
-}
+        "48":"./icons/lolicon.png"
+    },
+    "web_accessible_resources": [{
+        "resources": ["sounds/*"],
+        "matches": ["<all_urls>"]
+    }]
+}   
