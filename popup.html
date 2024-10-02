@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
+    <title>AATrox</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <video class="video-background" autoplay muted loop>
+        <source src="videos/AatroxWallPaperBackground.mp4" type="video/mp4">
+    </video>
+    <audio id="sound-add-task">
+        <source src="sounds/addTaskVoice.mp3" type="audio/mp3">
+    </audio>
+    <audio id="sound-delete-task">
+        <source src="sounds/firstVoiceAartrox.mp3" type="audio/mp3">
+    </audio>
+    <audio id="sound-ultimate">
+        <source src="sounds/skills/AatroxR.mp3" type="audio/mp3">
+    </audio>
+    <video id="overlayImage"  class="video-background" autoplay muted loop src="videos/skilleffects/darkred.mp4" style="display:none;">
+    </video>
+        <div class="list-skill">
+        <button id="skill-Q"></button>
+        <button id="skill-W"></button>
+        <button id="skill-E"></button>
+        <button id="skill-R"></button>
+    </div>
     <div id="task-container">
-        <h2>Task List</h2>
+        <h2>Let Kill All Of Them</h2>
         <div id="tasks"></div>
         <input type="text" id="new-task-input" placeholder="Enter new task" />
-        <button id="add-task-btn">Add Task</button>
+        <button id="add-task-btn">Push Task</buttosound-add-taskn>
     </div>
     <script src="popup.js"></script>
 </body>
